@@ -440,7 +440,6 @@ app.get('/view', async (req, res) => {
         res.status(500).send('Error fetching image');
     }
 });
-
 const startServer = async () => {
 	app.listen(8080, () => console.log('Server started on port 8080'));
 };
