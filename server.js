@@ -420,7 +420,7 @@ app.get('/view', async (req, res) => {
     }
 
     const comfyUIUrl = `http://127.0.0.1:8188/view?filename=${encodeURIComponent(filename)}`;
-
+	console.log("comfyUIUrl: ", comfyUIUrl);
     try {
         const response = await fetch(comfyUIUrl);  // 向 ComfyUI 发送请求
         if (!response.ok) {

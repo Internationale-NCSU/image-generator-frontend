@@ -49,6 +49,8 @@ const App = () => {
 	const generateImage = async (prompt, setPrompt) => {
 		if (prompt) {
 			try{
+				console.log('Prompt:', prompt);
+
 				setIsGenerating(true);
 				fetch('/generate-image-with-comfyui', {
 					method: 'POST',
@@ -66,7 +68,8 @@ const App = () => {
 								if (historyData.filename) {
 									clearInterval(intervalId);
 									setGeneratedImage({
-										photo: `/view?filename=${encodeURIComponent(historyData.filename)}`,
+										photo: `http://127.0.0.1:8188/view?filename=ComfyUI_00013_.png`,
+										// photo: `http://127.0.0.1:8188/view?filename=${encodeURIComponent(historyData.filename)}`,
 										altText: prompt
 									});
 									console.log('Image generated:', historyData.filename);
